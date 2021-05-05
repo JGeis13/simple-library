@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simple Library</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="app-container">
+      <button id="new-book">+ New Book</button>
+      <div class="main-container">
+        <h2>simpleLibrary</h2>
+        <div class="library">
+          <div class="book">
+            <div class="title">Title of book</div>
+            <div class="auth">Author</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new book form -->
+      <div class="new-book-form">
+        <form>
+          <div class="item-box">
+            <label>Title:</label>
+            <input type="text" placeholder="Title" />
+          </div>
+          <div class="item-box">
+            <label>Author:</label>
+            <input type="text" placeholder="Author" />
+          </div>
+          <div class="item-box">
+            <label>Page Count:</label>
+            <input type="number" value="200" />
+          </div>
+          <div class="item-box">
+            <p>Have you read the book?</p>
+            <input type="radio" name="completed" value="true" />
+            <label>Yes</label>
+            <input type="radio" name="completed" value="false" />
+            <label>No</label>
+          </div>
+          <button id="save-book">Save</button>
+          <button id="cancel-book">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="main.js" async defer></script>
+  </body>
+</html>
