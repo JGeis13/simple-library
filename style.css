@@ -1,0 +1,70 @@
+:root {
+  --title-col-width: 150px;
+  --auth-col-width: 100px;
+  --page-col-width: 100px;
+  --completed-col-width: 100px;
+}
+
+/* Basic resets */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Library */
+
+.library .headers {
+  display: flex;
+  list-style: none;
+}
+
+.headers li {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.headers li:first-child {
+  width: var(--title-col-width);
+}
+.headers li:nth-child(2) {
+  width: var(--auth-col-width);
+}
+.headers li:nth-child(3) {
+  width: var(--page-col-width);
+}
+.headers li:nth-child(4) {
+  width: var(--completed-col-width);
+}
+
+.books {
+  display: flex;
+}
+
+.book {
+  display: flex;
+}
+
+.book > div {
+  padding: 0.5rem;
+}
+
+.book > div:nth-child(1) {
+  width: var(--title-col-width);
+}
+.book > div:nth-child(2) {
+  width: var(--auth-col-width);
+}
+.book > div:nth-child(3) {
+  width: var(--page-col-width);
+}
+.book > div:nth-child(4) {
+  width: var(--completed-col-width);
+}
+
+/* Form Section */
+
+.new-book-form {
+  display: none;
+}
