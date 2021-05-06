@@ -21,15 +21,25 @@
       <div class="main-container">
         <h2>simpleLibrary</h2>
         <div class="library">
-          <div class="book">
-            <div class="title">Title of book</div>
-            <div class="auth">Author</div>
+          <ul class="headers">
+            <li>Title</li>
+            <li>Author</li>
+            <li>Page Count</li>
+            <li>Completed</li>
+          </ul>
+          <div class="books">
+            <div class="book">
+              <div class="title">Title of book</div>
+              <div class="auth">Author</div>
+              <div class="page-count">274</div>
+              <div class="completed">Yes</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- new book form -->
-      <div class="new-book-form">
+      <section class="new-book-form">
         <form>
           <div class="item-box">
             <label>Title:</label>
@@ -53,7 +63,7 @@
           <button id="save-book">Save</button>
           <button id="cancel-book">Cancel</button>
         </form>
-      </div>
+      </section>
     </div>
 
     <script src="main.js" async defer></script>
