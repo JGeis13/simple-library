@@ -7,7 +7,6 @@
   const formEl = document.querySelector(".new-book-form form");
   const booksEl = document.querySelector(".books");
   const newBookBtn = document.querySelector("#new-book");
-  const saveNewBookBtn = document.querySelector("#save-book");
   const cancelNewBookBtn = document.querySelector("#cancel-book");
 
   /* Logic */
@@ -36,20 +35,16 @@
     myLibrary.push(new Book(idGenerator(), title, author, pageCount, completed));
 
     updateLocalStorage(myLibrary);
-    console.log(myLibrary);
   }
 
   function removeBookFromLibrary(id) {
     myLibrary = myLibrary.filter((book) => book.id != id);
     updateLocalStorage(myLibrary);
-    console.log(myLibrary);
   }
 
   function toggleCompletedBook(id) {
     myLibrary.filter((book) => book.id == id)[0].toggleCompleted();
     updateLocalStorage(myLibrary);
-    console.log("Toggled complete on book id: ", id);
-    console.log(myLibrary);
   }
 
   function idGenerator() {
@@ -74,18 +69,32 @@
     ["title", "author", "pageCount", "completed", "delete"].forEach((prop) => {
       const el = document.createElement("div");
       el.classList.add(prop);
+
+      const label = document.createElement("span");
+      label.classList.add("label");
+
       if (prop == "completed") {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = book[prop];
         el.append(checkbox);
+
+        label.textContent = "have read : ";
+        el.prepend(label);
       } else if (prop == "delete") {
         let delBtn = document.createElement("button");
         delBtn.classList.add("delete-book");
         delBtn.textContent = "x";
         el.append(delBtn);
+      } else if (prop == "pageCount") {
+        el.textContent = book[prop];
+        label.textContent = "page count : ";
+        el.prepend(label);
       } else {
         el.textContent = book[prop];
+
+        label.textContent = prop + " : ";
+        el.prepend(label);
       }
 
       bookEl.append(el);
@@ -186,6 +195,5 @@ To-Do's
 -------
 - Styling
 - Animations
-- local storage
 
 */
